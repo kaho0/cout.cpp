@@ -1,6 +1,9 @@
 #include<iostream>
 #include<vector>
 using namespace std;
+
+//dp[i][j] = the maximum value achievable with the first i items and knapsack capacity j
+
 int tab_knapsack(vector<int>val,vector<int>wt,int w,int n){
     vector<vector<int>>dp(n+1,vector<int>(w+1,0));
     for(int i=1;i<n+1;i++){
@@ -14,6 +17,13 @@ int tab_knapsack(vector<int>val,vector<int>wt,int w,int n){
                 dp[i][j]=dp[i-1][j];
             }
         }
+
+    }
+       for (int i = 0; i <= n; i++) {
+        for (int j = 0; j <= w; j++) {
+            cout << dp[i][j] << " ";
+        }
+        cout << "\n";
     }
     return dp[n][w];
 }
