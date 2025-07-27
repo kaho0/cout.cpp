@@ -29,7 +29,7 @@ int main() {
 
     // Step 2: Find max deadline
     int maxDeadline = 0;
-    for (auto job : jobs) {
+    for (const auto& job : jobs) {
         if (job.deadline > maxDeadline)
             maxDeadline = job.deadline;
     }
@@ -40,7 +40,7 @@ int main() {
     int totalProfit = 0;
 
     // Step 4: Assign jobs to the latest free slot before deadline
-    for (auto job : jobs) {
+    for (const auto& job : jobs) {
         for (int t = job.deadline; t > 0; t--) {
             if (slot[t] == '-') {  // slot free?
                 slot[t] = job.id;   // assign job
