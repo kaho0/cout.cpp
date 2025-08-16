@@ -26,7 +26,7 @@ int main(){
         }
     }
 
-    cout << "Entered matrix elements:\n";
+    cout << " Entered matrix elements:\n";
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             cout << matrix[i][j] << " ";
